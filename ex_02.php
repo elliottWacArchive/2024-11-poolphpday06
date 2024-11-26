@@ -3,15 +3,18 @@
 function my_cat_files(...$paths)
 {
     $i = 0;
+    $mess = "";
     foreach ($paths as $path) {
         $file = fopen($path, "r");
         $content = fread($file, filesize($path));
-        echo $content;
+        $mess = $mess . $content;
         $i++;
         if ($i < count($paths)) {
-            echo "\n_____";
+            $mess = $mess . "\n_____";
         }
-        echo "\n";
+        $mess = $mess . "\n";
+        fclose($file);
     }
+    return $mess;
 }
-// my_cat_files("cucul.txt", "fion.txt", "zizi.txt");
+// echo my_cat_files("cucul.txt", "fion.txt", "zizi.txt");

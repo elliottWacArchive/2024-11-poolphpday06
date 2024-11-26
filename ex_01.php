@@ -2,11 +2,10 @@
 
 function my_generate_file($name)
 {
-    $file = fopen("$name.txt", "w+");
-    if (isset($file)) {
-        fclose($file);
-        return true;
+    if (file_exists("$name.txt")) {
+        return false;
     }
+    $file = fopen("$name.txt", "x");
     fclose($file);
-    return false;
+    return true;
 }
