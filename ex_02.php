@@ -10,10 +10,10 @@ function my_cat_files(...$paths)
         $mess = $mess . $content;
         $i++;
         if ($i < count($paths)) {
-            $mess = $mess . "\n_____";
+            $mess = $mess . "_____\n";
         }
         fclose($file);
     }
     return $mess;
 }
-// echo my_cat_files("cucul.txt", "fion.txt", "zizi.txt");
+//echo my_cat_files("caca.txt");

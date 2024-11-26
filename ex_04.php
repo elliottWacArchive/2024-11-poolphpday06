@@ -4,22 +4,26 @@ function display_xml_nodes($xmlstr, $node)
 {
     $xml = new SimpleXMLElement($xmlstr);
     if ($xml) {
-        rec_tab_parc($xml, $node);
-        return true;
+        $bool = 0;
+        $exec = rec_tab_parc($xml, $node, $bool);
+        if ($bool != 0) {
+            return true;
+        }
     }
     return false;
 }
 
-function rec_tab_parc($tab, $node)
+function rec_tab_parc($tab, $node, &$value)
 {
     foreach ($tab as $key => $val) {
         //echo "key : $key, type : " . gettype($key) . "\n";
         //echo "val : $val, type : " . gettype($val) . "\n";
         //echo "\n_____________________\n";
         if ($key == $node) {
+            $value++;
             echo "$val\n";
         } else {
-            rec_tab_parc($val, $node);
+            rec_tab_parc($val, $node, $value);
         }
     }
 }
@@ -47,4 +51,4 @@ function rec_tab_parc($tab, $node)
 //         </personnes>
 //     </staff>
 // </webacademie>";
-// display_xml_nodes($xml, "name");
+// echo display_xml_nodes($xml, "zizi");
