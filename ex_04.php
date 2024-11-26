@@ -22,9 +22,8 @@ function rec_tab_parc($tab, $node, &$value)
         if ($key == $node) {
             $value++;
             echo "$val\n";
-        } else {
-            rec_tab_parc($val, $node, $value);
         }
+        rec_tab_parc($val, $node, $value);
     }
 }
 // $xml =
@@ -33,7 +32,10 @@ function rec_tab_parc($tab, $node, &$value)
 //         <title> Staff Samung Campus</title>
 //         <personnes>
 //             <personne>
-//                 <name>Francois-Afif Benthanane</name>
+//                 <name>
+//                     <name>Francois-Afif Benthanane</name>
+//                     <name>caca</name>
+//                     </name>
 //                 <poste>Fondateur</poste>
 //             </personne>
 //             <personne>
@@ -51,4 +53,7 @@ function rec_tab_parc($tab, $node, &$value)
 //         </personnes>
 //     </staff>
 // </webacademie>";
-// echo display_xml_nodes($xml, "zizi");
+
+// $xml2 = new SimpleXMLElement($xml);
+
+// echo display_xml_nodes($xml, "name");
