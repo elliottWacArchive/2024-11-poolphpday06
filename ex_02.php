@@ -12,7 +12,6 @@ function my_cat_files(...$paths)
         if ($i < count($paths)) {
             $mess = $mess . "\n_____";
         }
-        $mess = $mess . "\n";
         fclose($file);
     }
     return $mess;
