@@ -3,7 +3,11 @@
 function display_xml_nodes($xmlstr, $node)
 {
     $xml = new SimpleXMLElement($xmlstr);
-    rec_tab_parc($xml, $node);
+    if ($xml) {
+        rec_tab_parc($xml, $node);
+        return true;
+    }
+    return false;
 }
 
 function rec_tab_parc($tab, $node) {
