@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 function my_comb_n($n)
 {
@@ -20,3 +20,5 @@ function aff_tab($arr)
 }
 
 my_comb_n(3);
+
+?> -->
