@@ -11,11 +11,9 @@ function my_cat_files(...$paths)
             $mess = $mess . $content;
         }
         $i++;
-        if ($i < count($paths) && filesize($path) != 0) {
-            $mess = $mess . "_____\n";
-        }
+        $mess = $mess . "_____\n";
         fclose($file);
     }
     return $mess;
 }
-//echo my_cat_files("caca.txt","pipi.txt");
+//echo my_cat_files("caca.txt");
