@@ -11,7 +11,7 @@ function my_cat_files(...$paths)
             $mess = $mess . $content;
         }
         $i++;
-        if ($i < count($paths) && filesize($path) != 0) {
+        if ($i < count($paths)) {
             $mess = $mess . "_____\n";
         }
         fclose($file);
