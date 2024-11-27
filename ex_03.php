@@ -3,6 +3,7 @@
 function write_into_my_file($str, $path, $append = false)
 {
     if (file_exists($path)) {
+        a:
         $file = fopen($path, "r+");
         if ($append && (filesize($path) != 0)) {
             $txt = fread($file, filesize($path)) . $str;
@@ -12,7 +13,9 @@ function write_into_my_file($str, $path, $append = false)
         }
         fclose($file);
         return true;
+    } else {
+        $file = fopen($path, "w+");
+        goto a;
     }
     return false;
 }
-// echo write_into_my_file("fesse","dede.txt", true);
