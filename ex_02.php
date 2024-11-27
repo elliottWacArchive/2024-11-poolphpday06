@@ -11,9 +11,10 @@ function my_cat_files(...$paths)
             $mess = $mess . $content;
         }
         $i++;
-        $mess = $mess . "_____\n";
+        if ($i < count($paths) && filesize($path) != 0) {
+            $mess = $mess . "_____\n";
+        }
         fclose($file);
     }
     return $mess;
 }
-//echo my_cat_files("caca.txt");
