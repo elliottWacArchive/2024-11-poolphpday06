@@ -18,4 +18,4 @@ function my_cat_files(...$paths)
     }
     return $mess;
 }
-echo my_cat_files("caca.txt","pipi.txt");
+//echo my_cat_files("caca.txt","pipi.txt");
